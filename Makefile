@@ -1,7 +1,7 @@
 TARGET = main
 CC = gcc
 RUNOBJS = main.o
-CFLAGS = -I/usr/local/include -g
+CFLAGS = -g -I/usr/local/include `pkg-config --cflags --libs gtk+-3.0`
 LINKLIBS = -g -ldiscord -lcurl -lm -lpthread -pthread -lsqlite3 `pkg-config --cflags --libs gtk+-3.0` -L/usr/local/lib
 
 all: $(TARGET)
